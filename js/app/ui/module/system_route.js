@@ -709,7 +709,13 @@ define([
                 for(let i = 0; i < routeData.route.length; i++){
                     let routeNodeData = routeData.route[i];
                     let systemName = routeNodeData.system;
-
+                    // replace WH systemnames of Drifter WH
+                    if(systemName === 'J200727'){systemName = 'Conflux'};
+                    if(systemName === 'J055520'){systemName = 'Sentinel'};
+                    if(systemName === 'J164710'){systemName = 'Vidette'};
+                    if(systemName === 'J174618'){systemName = 'Redoubt'};
+                    if(systemName === 'J110145'){systemName = 'Barbican'};
+                    
                     // fake connection elements between systems -----------------------------------------------------------
                     if(prevRouteNodeData){
                         let connectionData = BaseModule.findConnectionsData(connectionsData, prevRouteNodeData.system, systemName);
